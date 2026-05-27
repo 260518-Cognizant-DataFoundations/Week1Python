@@ -10,3 +10,19 @@ We'll be creating an Omakase Command Line Interface (CLI) app that demonstrates:
 4. Functions (to organize/declutter our code and make it more reusable)
 """
 
+# TODO: Possible extra functionality
+
+print("""
+
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+                    Welcome to the Omakase CLI app!
+We'll be creating a personalized 3-course meal based on your preferences
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~||~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*
+
+First, what is your name?
+""")
+
+# Save the user's name via input()
+name = input(">>> ")
+
+print(f"Nice to meet you, {name}!")
