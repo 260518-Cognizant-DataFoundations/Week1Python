@@ -46,7 +46,7 @@ or when I know for a fact that I just need a quick function I'll never want to r
 def versatile_calculation(func, value):
     return func(value)
 
-# We can use a lambda as the func argument to apply_function
+# We can use a lambda as the func argument! Or create a standalone function, taking up space...
 result = versatile_calculation(lambda x: x**2, 5)
 print(result) # This will print 25, since the lambda is squaring the input value
 
