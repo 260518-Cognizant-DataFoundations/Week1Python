@@ -34,7 +34,7 @@ Lambdas, on the other hand, are NOT reusable. They are meant to be used once, an
 Ok... why would we do that?
 
 - Lambdas are often used as args in higher-order functions 
-(which are functions that take other functions)
+(which are functions that take other functions as an argument)
 
 - Or as a quick way to create a function without taking up space
 
