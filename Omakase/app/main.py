@@ -49,8 +49,10 @@ while hungry:
     if still_hungry == "no":
         print("Thank you! Here's your receipt:")
 
-        # Showing off the datetime data type
+        # Showing off the datetime module
         from datetime import datetime
+
+
 
         print(datetime.now().strftime("%Y-%m-%d"))
 
