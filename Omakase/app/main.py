@@ -52,8 +52,6 @@ while hungry:
         # Showing off the datetime module
         from datetime import datetime
 
-
-
         print(datetime.now().strftime("%Y-%m-%d"))
 
         # Print the contents of the eaten_foods dictionary
