@@ -31,6 +31,7 @@ print(f"Nice to meet you, {name}!")
 # This boolean will determine whether the while loop menu continues to execute
 hungry = True
 
+# Where does hungry turn False in this?
 while hungry:
 
     # Generate a 3-course meal, save the value to use in serve_meal below
