@@ -49,6 +49,11 @@ while hungry:
     if still_hungry == "no":
         print("Thank you! Here's your receipt:")
 
+        # Showing off the datetime data type
+        from datetime import datetime
+
+        print(datetime.now().strftime("%Y-%m-%d"))
+
         # Print the contents of the eaten_foods dictionary
         print(f"""
         -Apps: {ru.eaten_foods["appetizers"]}
