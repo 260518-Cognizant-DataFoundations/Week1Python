@@ -7,7 +7,7 @@ def start_game(players):
     # len() is a useful function that returns the LENgth of a list or other sequence
 
     if len(players) < 1:
-        print("Invalid number of players. Please enter 1 or 2.")
+        print("Invalid number of players. Please enter 1 or more.")
         return # We can return early if given invalid input, terminating the function
 
     if len(players) == 1:
