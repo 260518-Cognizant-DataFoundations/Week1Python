@@ -8,7 +8,8 @@ eaten_foods = {
     "desserts":[]
 }
 
-# TODO: Store the bill
+# Store the bill in a variable that gets updated when the user is served
+bill = 0
 
 # A function to find out the user's fav foods and come up with a meal for them
 def generate_meal():
@@ -41,3 +42,13 @@ def serve_meal(meal):
     eaten_foods["appetizers"].append(f"{meal[0]} Bisque")
     eaten_foods["entrees"].append(f"{meal[1]} Wellington")
     eaten_foods["desserts"].append(f"Frozen {meal[2]}")
+
+    # For simplicity, let's assume each course is $10
+
+    # Need to make the variable global before we can edit it inside this function
+    global bill
+    bill += 30
+
+    print(bill)
+
+    # Remember, bill += 30 is the same as bill = bill + 30

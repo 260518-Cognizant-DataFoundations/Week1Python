@@ -9,7 +9,7 @@ We'll be creating an Omakase Command Line Interface (CLI) app that demonstrates:
 3. Control flow (review in a more realistic setting)
 4. Functions (to organize/declutter our code and make it more reusable)
 """
-from app.restaurant_util import generate_meal, serve_meal, eaten_foods
+import restaurant_util as ru
 
 # TODO: Possible extra functionality
 
@@ -34,11 +34,11 @@ hungry = True
 while hungry:
 
     # Generate a 3-course meal, save the value to use in serve_meal below
-    generated_meal = generate_meal()
+    generated_meal = ru.generate_meal()
     print(f"Ok! I can work with {generated_meal}")
 
     # Serve the user
-    serve_meal(generated_meal)
+    ru.serve_meal(generated_meal)
 
     # Ask the user if they are still hungry
     # THIS is what determines if the while loops breaks or not
@@ -50,10 +50,14 @@ while hungry:
 
         # Print the contents of the eaten_foods dictionary
         print(f"""
-        -Apps: {eaten_foods["appetizers"]}
-        -Entrees: {eaten_foods["entrees"]}
-        -Desserts: {eaten_foods["desserts"]}
+        -Apps: {ru.eaten_foods["appetizers"]}
+        -Entrees: {ru.eaten_foods["entrees"]}
+        -Desserts: {ru.eaten_foods["desserts"]}
         """)
+
+        # Print the user's bill with 10% sales tax
+        print(f"That will be: ${ru.bill*1.1:.2f}")
+        # :.2f? That's saying "take this float and reduce it to 2 decimal places"
 
         hungry = False # THIS BREAKS THE LOOP!
     elif still_hungry == "yes":
