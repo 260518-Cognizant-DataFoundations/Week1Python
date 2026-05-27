@@ -26,3 +26,26 @@ First, what is your name?
 name = input(">>> ")
 
 print(f"Nice to meet you, {name}!")
+
+# This boolean will determine whether the while loop menu continues to execute
+hungry = True
+
+while hungry:
+    print("[customer gets fed here]")
+
+    # TODO: generate a 3 course meal
+
+    # TODO: serve the user
+
+    # Ask the user if they are still hungry
+    # THIS is what determines if the while loops breaks or not
+    print("Are you still hungry? (yes/no)")
+    still_hungry = input(">>> ").lower()
+
+    if still_hungry == "no":
+        print("Ok thanks bye")
+        hungry = False # THIS BREAKS THE LOOP!
+    elif still_hungry == "yes":
+        print("Great! Let's make you another meal!")
+    else:
+        print("Huh? I didn't understand you, so I'll just keep feeding you...")
