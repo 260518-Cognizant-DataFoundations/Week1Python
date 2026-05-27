@@ -9,7 +9,7 @@ We'll be creating an Omakase Command Line Interface (CLI) app that demonstrates:
 3. Control flow (review in a more realistic setting)
 4. Functions (to organize/declutter our code and make it more reusable)
 """
-from app.restaurant_util import generate_meal, serve_meal
+from app.restaurant_util import generate_meal, serve_meal, eaten_foods
 
 # TODO: Possible extra functionality
 
@@ -46,7 +46,15 @@ while hungry:
     still_hungry = input(">>> ").lower()
 
     if still_hungry == "no":
-        print("Ok thanks bye")
+        print("Thank you! Here's your receipt:")
+
+        # Print the contents of the eaten_foods dictionary
+        print(f"""
+        -Apps: {eaten_foods["appetizers"]}
+        -Entrees: {eaten_foods["entrees"]}
+        -Desserts: {eaten_foods["desserts"]}
+        """)
+
         hungry = False # THIS BREAKS THE LOOP!
     elif still_hungry == "yes":
         print("Great! Let's make you another meal!")

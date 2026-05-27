@@ -1,7 +1,12 @@
 # This is a UTILITY file - it contains data and functions that we use throughout the app
 # I don't want to clutter main.py, and I want these things to be reusable
 
-# TODO: Store the eaten foods in a dictionary
+# Store the eaten foods in a dictionary
+eaten_foods = {
+    "appetizers":[],
+    "entrees":[],
+    "desserts":[]
+}
 
 # TODO: Store the bill
 
@@ -31,3 +36,8 @@ def serve_meal(meal):
         Your dessert: Frozen {meal[2]}
         **================W==============**
     """)
+
+    # Append each course to the dictionary
+    eaten_foods["appetizers"].append(f"{meal[0]} Bisque")
+    eaten_foods["entrees"].append(f"{meal[1]} Wellington")
+    eaten_foods["desserts"].append(f"Frozen {meal[2]}")
