@@ -9,6 +9,7 @@ We'll be creating an Omakase Command Line Interface (CLI) app that demonstrates:
 3. Control flow (review in a more realistic setting)
 4. Functions (to organize/declutter our code and make it more reusable)
 """
+from app.restaurant_util import generate_meal, serve_meal
 
 # TODO: Possible extra functionality
 
@@ -31,11 +32,13 @@ print(f"Nice to meet you, {name}!")
 hungry = True
 
 while hungry:
-    print("[customer gets fed here]")
 
-    # TODO: generate a 3 course meal
+    # Generate a 3-course meal, save the value to use in serve_meal below
+    generated_meal = generate_meal()
+    print(f"Ok! I can work with {generated_meal}")
 
-    # TODO: serve the user
+    # Serve the user
+    serve_meal(generated_meal)
 
     # Ask the user if they are still hungry
     # THIS is what determines if the while loops breaks or not
