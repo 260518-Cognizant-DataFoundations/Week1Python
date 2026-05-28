@@ -30,7 +30,8 @@ start_game(squad)
 print("===============(Lambdas)")
 
 """
-Lambdas, on the other hand, are NOT reusable. They are meant to be used once, and then discarded.
+Lambdas, on the other hand, are NOT reusable. 
+They are meant to be used once, and then discarded.
 Ok... why would we do that?
 
 - Lambdas are often used as args in higher-order functions 
@@ -47,17 +48,20 @@ def versatile_calculation(func, value):
     return func(value)
 
 # We can use a lambda as the func argument! Or create a standalone function, taking up space...
-result = versatile_calculation(lambda x: x**2, 5)
+result = versatile_calculation(lambda x : x ** 2, 5)
 print(result) # This will print 25, since the lambda is squaring the input value
 
 # So the return looks like this: return 5**2, which is 25
 
+
 # Now a more realistic example, using the built-in sorted() function,
+# it helps us SORT sequences
 # which takes a "key" argument that expects a function
 
 names = ["Jimm", "Jom", "Jummmy", "Jammmyyy"]
 
 # We can sort the names by their length using a lambda as the key function
+# BTW - if we DIDN'T supply a key function, sorted() go by natural order (numerical, alphabetical)
 sorted_names = sorted(names, key=lambda name: len(name))
 
 print(sorted_names) # This will print the names sorted by length
