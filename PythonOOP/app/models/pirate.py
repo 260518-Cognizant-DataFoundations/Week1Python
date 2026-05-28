@@ -15,7 +15,7 @@ class Pirate(Person):
     # We'll change the constructor to reflect Pirates more than the generic Person
     def __init__(self, name, age, saltiness, bounty):
         # super() calls to the constructor of the parent class (AKA superclass)
-        super(name, age) # TODO: THIS MIGHT BE BROKEN? WANTS ME TO CALL __INIT__
+        super().__init__(name, age)
         self.saltiness = saltiness
         self.bounty = bounty
 
@@ -25,7 +25,12 @@ class Pirate(Person):
 
     # AND we can change the behavior of inherited methods
     def say_hello(self):
-        return f"Ahoy! I be {self.name}, arrrrgh"
+
+        if self.saltiness < 50:
+            return f"Hello, I be {self.name}. Me bounty is {self.bounty}"
+
+        # If the if block doesn't run, this block will run instead
+        return f"Ahoy! I be {self.name}, arrrrgh me bounty be {self.bounty}"
 
     # NOTE: eat_food DOES exist and can be used by Pirates
     # But it's directly inherited, and we haven't changed it.
