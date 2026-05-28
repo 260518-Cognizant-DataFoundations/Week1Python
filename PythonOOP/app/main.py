@@ -9,6 +9,7 @@ Then we'll explore Encapsulation and Abstraction with our Ship Class
 # Person lives in a different file/package, so we need to import it
 from app.models.person import Person
 from app.models.pirate import Pirate
+from app.models.ship import Ship
 
 print("======================(Using the Person Superclass)")
 
@@ -40,3 +41,24 @@ print(pirate1.plunder())
 print(pirate2.say_hello())
 print(pirate2.eat_food("Ship's Biscuits"))
 print(pirate2.plunder())
+
+print("========================(Using the Encapsulated Ship Class)")
+
+# Instantiate a Ship object
+ship1 = Ship("Black Pearl", 100)
+
+print(ship1.name) # name is public, we can get and set it at will
+print(ship1.get_num_cannonballs())
+
+# Let's try to set negative cannonballs
+ship1.set_num_cannonballs(-50)
+print(ship1.get_num_cannonballs()) # Still 100
+
+# Now for a valid number -
+ship1.set_num_cannonballs(50)
+print(ship1.get_num_cannonballs()) # Works!
+
+# Fire a cannonball!
+# ship1.fire_cannon(person1) # TypeError! Wrong datatype
+
+ship1.fire_cannon(pirate1)

@@ -6,6 +6,8 @@ We can add members specific to Pirate
 And Person can have tons of subclasses that all inherit from it
 This promotes POLYMORPHISM.
 """
+from typing import override
+
 # What's up with this import statement?
 # They're in the same package so we don't need to write the full path
 from .person import Person
@@ -24,6 +26,8 @@ class Pirate(Person):
         return f"{self.name} is plundering... respectfully"
 
     # AND we can change the behavior of inherited methods
+    # This is an example of METHOD OVERRIDING, which is a type of POLYMORPHISM
+    @override
     def say_hello(self):
 
         if self.saltiness < 50:
@@ -34,3 +38,5 @@ class Pirate(Person):
 
     # NOTE: eat_food DOES exist and can be used by Pirates
     # But it's directly inherited, and we haven't changed it.
+
+
